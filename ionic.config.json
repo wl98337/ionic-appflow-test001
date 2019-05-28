@@ -1,6 +1,8 @@
 {
   "name": "ionic-appflow-test001",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "52a6a741"
 }

@@ -35,6 +35,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'contactus',
+        children: [
+          {
+            path: '',
+            loadChildren: '../service/contactus/contactus.module#ContactusPageModule'
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Contact us</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card" *ngIf="!submited">
+    <ion-card-header>
+      <ion-card-subtitle>Contact us</ion-card-subtitle>
+      <ion-card-title>Need help? We are here for you.</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">email:</ion-label>
+        <ion-input placeholder="name@orgnization.com" type="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">comment:</ion-label>
+        <ion-textarea placeholder="your comments"></ion-textarea>
+      </ion-item>
+      <ion-button expand="block" (click)="submit()">Submit</ion-button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card class="welcome-card" *ngIf="submited">
+      <ion-card-header>
+        <ion-card-subtitle>Thank you</ion-card-subtitle>
+        <ion-card-title>bank agents will reach you as soon as possible</ion-card-title>
+      </ion-card-header>
+    </ion-card>
+</ion-content>

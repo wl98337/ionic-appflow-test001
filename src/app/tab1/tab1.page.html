@@ -32,7 +32,10 @@
     <ion-title class="title" [ngClass]="{'gold':type=='gold'}">{{username}}</ion-title>
   </ion-toolbar> -->
   <ion-toolbar color="black" class="header">
-    <ion-buttons slot="start" (click)="backLogin()">
+    <div class="log-off" (click)="backLogin()" *ngIf="showLogOff">
+      log off
+    </div>
+    <ion-buttons slot="start" (click)="showLogOffBtn()">
       <ion-button>
           <ion-icon src="/assets/icon/user.svg"></ion-icon>
       </ion-button>

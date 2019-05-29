@@ -33,6 +33,7 @@ export class FaqDetailsPage implements OnInit {
   ]
   id:any;
   currentFaq={};
+  color:string = "secondary";
 
   constructor(
     public navCtrl: NavController,
@@ -51,5 +52,6 @@ export class FaqDetailsPage implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     this.currentFaq = this.faqList[this.id - 1];
+    this.color = localStorage.getItem("type") == 'gold' ? 'secondary' : 'primary';
   }
 }

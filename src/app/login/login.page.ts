@@ -30,7 +30,8 @@ export class LoginPage implements OnInit {
   ngOnInit() {
     this.service.loginName = "";
     this.service.islogin = false;
-    fromEvent(window, 'keydown')
+    let container = document.getElementById("login-container");
+    fromEvent(container, 'keydown')
       .subscribe((event: KeyboardEvent) => {
         if (event.keyCode == 13) {
           this.login();

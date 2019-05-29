@@ -11,7 +11,7 @@
 </ion-header>
 <ion-content overflow-scroll="false">
   <header-root></header-root>
-  <div class="login-container">
+  <div class="login-container" id="login-container">
     <div class="login-box">
       <div class="white-mask">
         <div class="login-top-wrapper" [ngClass]="{'ios-margin':isIOS}">
@@ -34,8 +34,8 @@
             </div>
             <div class="input-container">
               <!-- <input id="password" [(ngModel)]="password" type="password" placeholder="Password" maxlength="16"> -->
-              <a href="#" class="ios ion-activatable hydrated">Forgot?</a>
               <ion-input type="password" class="test" color="black" [(ngModel)]="password" placeholder="Password"></ion-input>
+              <a href="#" class="ios ion-activatable hydrated">Forgot?</a>
             </div>
             <div class="large-screen">
               <ion-button color="primary" (click)="login()">Log in</ion-button>

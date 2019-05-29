@@ -15,10 +15,15 @@ export class Tab1Page {
   ) {}
   type:string = "blue";
   username:string = "Blue user";
+  showLogOff: boolean = false;
 
   ngOnInit() {
     this.type = this.route.snapshot.paramMap.get('type');
     this.username = this.type == "blue"? "Citiblue Client": "Citigold Private Client";
+  }
+
+  showLogOffBtn() {
+    this.showLogOff = !this.showLogOff;
   }
 
   backLogin() {

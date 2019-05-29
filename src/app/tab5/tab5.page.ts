@@ -24,6 +24,7 @@ export class Tab5Page {
     console.log("enter")
   }
   ionViewWillLeave() {
+    this.searchFocused = false;
     console.log("Looks like I'm about to leave :(");
   }
 

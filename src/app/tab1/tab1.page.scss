@@ -1,4 +1,236 @@
-.welcome-card ion-img {
-  max-height: 35vh;
+$citi-blue:#056dae;
+$citi-gold: #b5985c;
+.header {
+  background: black;
+  color: $citi-blue;
+  .title {
+    // font-size: 1.4rem;
+    font-weight: bold;
+    &.gold {
+      color: $citi-gold;
+    }
+  }
+  ion-icon {
+    // font-size: 30px;
+    color: white;
+  }
+}
+.m-dashboard {
+  background: black;
+  height: 100%;
   overflow: hidden;
+  .total-info {
+    margin-top: 2.5rem;
+    text-align: center;
+    color: white;
+    .total-txt {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+    .total-balance {
+      font-size: 1.7rem;
+      margin-bottom: 0.5rem;
+    }
+    .total-desc {
+      font-size: 1.4rem;
+      font-weight: 100;
+    }
+  }
+  .account-list {
+    margin-top: 3rem;
+    overflow: hidden;
+    width: 100%;
+    @media (min-width: 415px) and (max-width: 768px) {
+      padding: 1rem;
+    }
+    
+    .item {
+      padding: 3.3rem 2rem 1.3rem 2rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #222;
+      font-weight: 300;
+      ion-icon {
+        color: #888;
+        width: 24px;
+        font-size: 16px;
+      }
+      .account-details {
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: white;
+        flex: 1 0 auto;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+.dashboard {
+  @media (min-width: 415px) and (max-width: 768px) {
+    height: calc(100% - 104px);
+  }
+  @media (min-width: 1px) and (max-width: 414px) {
+    min-height: calc(100% - 115px);
+  }
+  min-height: calc(100% - 115px);
+  height: calc(100% - 149px);
+  display: flex;
+  width: 100%;
+  background-color:#eee;
+  .sidebar {
+    width: 90px;
+    background: rgb(248,248,248);
+    height: 100%;
+    flex: 0 0 90px;
+    .tab {
+      cursor: pointer;
+      display: flex;
+      margin-top: 40px;
+      flex-direction: column;
+      align-items: center;
+      ion-icon {
+        font-size: 32px;
+        color: #666;
+      }
+      span {
+        margin-top: 5px;
+        font-size: 11px;
+      }
+    }
+  }
+  .folder-wrapper {
+    padding: 0 10px;
+    max-width: 1360px;
+    background: rgb(238,238,238);
+    height: 100%;
+    flex: 1 1 auto;
+    .filters {
+      display: flex;
+      width: 80%;
+      max-width: 700px;
+      font-size: 12px;
+      color: #056dae;
+      padding: 10px 0;
+      justify-content: space-between;
+      &.gold {
+        color: rgb(231, 195, 34);
+      }
+      div {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+      }
+    }
+    .folder {
+      cursor: pointer;
+      background: white;
+      display: flex;
+      align-items: center;
+      box-shadow: 0px 0px 1px #ccc;
+      padding: 15px;
+      color: #666;
+      margin-bottom: 15px;
+      ion-icon {
+        font-size: 24px;
+        color: black;
+        &.down {
+          color: #056dae;
+          &.gold {
+            color: rgb(231, 195, 34);
+          }
+        }
+      }
+      .account-info {
+        display: flex;
+        flex: 1 1 auto;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 50px;
+        .account-name {
+          font-size: 14px;
+        }
+        .amount-info {
+          .amount-txt {
+            font-size: 9px;
+            color: #aaa;
+            margin-bottom: 8px;
+          }
+          .amount {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .dashboard {
+    height: auto;
+    display: flex;
+    width: 100%;
+    .sidebar {
+      display: none;
+    }
+    .folder-wrapper {
+      padding: 0;
+      .filters {
+        width: auto;
+        max-width: none;
+        font-size: 1.2rem;
+        color: #056dae;
+        padding: 2rem;
+        div:not(:last-child) {
+          display: none;
+        }
+      }
+      .folder {
+        background: white;
+        display: flex;
+        align-items: flex-start;
+        box-shadow: 0px 0px 1px #ccc;
+        padding: 2rem 1.5rem;
+        color: #666;
+        margin-bottom: 0.8rem;
+        ion-icon {
+          font-size: 24px;
+          color: black;
+          &.down {
+            font-size: 16px;
+            color: #056dae;
+            &.gold {
+              color: rgb(231, 195, 34);
+            }
+          }
+        }
+        .account-info {
+          display: flex;
+          flex-direction: column;
+          flex: 1 1 auto;
+          justify-content: flex-start;
+          align-items: center;
+          padding-left: 1rem;
+          padding-right: 0;
+          .account-name {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+          }
+          .amount-info {
+            .amount-txt {
+              font-size: 1.2rem;
+              color: #aaa;
+              margin-bottom: 0.8rem;
+            }
+            .amount {
+              font-size: 1.6rem;
+            }
+          }
+        }
+      }
+    }
+  }
 }

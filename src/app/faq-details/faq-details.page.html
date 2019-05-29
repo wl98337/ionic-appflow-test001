@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start" (click)="popBack()">
+      <ion-button>
+        <ion-icon src="/assets/icon/arrow-back.svg"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+        <ion-button>
+          <ion-icon name=""></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    <ion-title class="title">FAQ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="faq-details">
+  <ion-item lines="none">
+    <p class="question">
+      {{currentFaq.question}}
+    </p>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-text>
+      <p class="answer">
+        {{currentFaq.answer}}
+      </p>
+    </ion-text>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label class="ion-margin-bottom" color="medium">
+      RELATED QUESTIONS
+    </ion-label>
+  </ion-item>
+
+  <ion-list class="faq-list">
+    <ion-item class="test" *ngFor="let faq of relatedList" (click)="goFaqDetails(faq.id)">
+      <ion-label class="ion-text-wrap ion-margin-vertical" color="primary">
+        {{faq.question}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-grid class="bottom">
+      <ion-row>
+        <ion-col class="ion-float-left">
+          <a class="link" href="">Privacy Policy</a>
+        </ion-col>
+        <ion-col class="ion-text-right">
+          <a class="link" href="">Online User Agreement</a>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label color="medium">
+            Citibank Singapore Ltd. Co. Reg. No. 200309485k
+          </ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

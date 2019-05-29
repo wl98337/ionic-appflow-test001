@@ -1,0 +1,31 @@
+ion-toolbar{
+    color: white;
+    
+    ion-icon {
+        color: white;
+    }
+    ion-title {
+        font-weight: 300;
+        color: white;
+        text-align: center;
+    }
+}
+.faq-details {
+    .answer {
+        font-size: 1.3rem;
+        font-weight: 300;
+    }
+    .bottom {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        padding: 1.5rem;
+        background: #f7f7f7;
+        font-size: 1.1rem;
+        border-top: 1px solid #cccccc;
+        .link {
+            text-decoration: none;
+        }
+    }
+}

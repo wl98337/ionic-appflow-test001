@@ -1,0 +1,210 @@
+%inner-box-shared {
+  max-width: 1400px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+.header {
+    overflow: hidden;
+  li {
+    list-style: none;
+  }
+  .black-header {
+    background: #333;
+    height: 34px;
+    box-sizing: border-box;
+    width: 100%;
+    @media (max-width: 768px) and (min-width: 1px) {
+      display: none;
+    }
+    .black-inner {
+      color: white;
+      overflow: hidden;
+      line-height: 34px;
+      @extend %inner-box-shared;
+      .left-items {
+        margin: 0;
+        padding-inline-start: 0;
+        float: left;
+        overflow: hidden;
+        .item {
+          float: left;
+          margin-right: 30px;
+          cursor: pointer;
+          &:hover {
+            color: #999;
+          }
+        }
+      }
+      .right-items {
+        margin: 0;
+        padding-inline-start: 0;
+        float: right;
+        overflow: hidden;
+        .item {
+          float: left;
+          margin-left: 30px;
+          cursor: pointer;
+          &:hover {
+            color: #999;
+          }
+        }
+      }
+    }
+  }
+  .logo-line {
+    background-image: linear-gradient(
+      180deg,
+      #00bdf2 0,
+      #00b3f0 18%,
+      #0066b3 77%,
+      #004985 100%
+    );
+    &.gold {
+      background-image: linear-gradient(
+      180deg,
+      rgb(224, 208, 137) 0,
+      rgb(228, 203, 93) 18%,
+      rgb(231, 195, 34) 77%,
+      rgb(201, 170, 35) 100%
+    );
+    }
+    height: 65px;
+    box-sizing: border-box;
+    overflow: hidden;
+    @media (max-width: 768px) and (min-width: 414px) {
+      height: 54px;
+    }
+    .logo-line-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @extend %inner-box-shared;
+      @media (max-width: 768px) and (min-width: 1px) {
+        padding: 0 14px;
+      }
+      .logo {
+        @media (max-width: 768px) and (min-width: 414px) {
+          height: 31px;
+          margin: 11.5px 0px;
+          cursor: pointer;
+        }
+        height: 31px;
+        margin: 17px 0px;
+        cursor: pointer;
+        float: left;
+      }
+      .user-box {
+        @media (max-width: 500px) and (min-width: 1px) {
+         display: none;
+        }
+        float: right;
+        color: white;
+        font-size: 16px;
+      }
+    }
+  }
+  .menu-line {
+    height: 50px;
+    background: white;
+    line-height: 50px;
+    border-bottom: 1px solid #eee;
+    font-weight: 300;
+    @media (max-width: 768px) and (min-width: 1px) {
+      .menu {
+        display: none;
+      }
+    }
+    .menu-line-inner {
+      @extend %inner-box-shared;
+      @media (max-width: 768px) and (min-width: 1px) {
+        padding: 0 14px;
+      }
+      .menu {
+        overflow: hidden;
+        float: left;
+        .item {
+          float: left;
+          margin-right: 30px;
+          font-size: 16px;
+          cursor: pointer;
+          position: relative;
+          @media (max-width: 1199px) and (min-width: 768px) {
+            font-size: 14px;
+          }
+          @media (max-width: 768px) and (min-width: 414px) {
+            font-size: 12px;
+          }
+          &::after {
+            transition: all 0.5s;
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 3px;
+            background-color: #056dae;
+            left: 0;
+            bottom: 0;
+            opacity: 0;
+          }
+          &:hover {
+            color: #056dae;
+            transition: all 0.5s;
+            &::after {
+              opacity: 1;
+            }
+          }
+        }
+      }
+      .search-box {
+        float: right;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        ion-icon {
+          font-size: 24px;
+        }
+      }
+      .menu-box {
+        float: right;
+        display: none;
+        margin-left: 15px;
+        padding-left: 15px;
+        position: relative;
+        height: 50px;
+        ion-icon {
+          font-size: 24px;
+        }
+        &::before {
+          position: absolute;
+          content: "";
+          left: 0;
+          top: 50%;
+          height: 60%;
+          width: 1px;
+          background: #ddd;
+          transform: translateY(-50%);
+        }
+        @media (max-width: 768px) and (min-width: 1px) {
+          display: flex;
+          align-items: center;
+        }
+        i {
+          line-height: 50px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+mobile-header-root {
+  @media (min-width: 769px) {
+    display: none!important;
+  }
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow-y: scroll;
+  z-index: 999;
+}

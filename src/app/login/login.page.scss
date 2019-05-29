@@ -1,0 +1,256 @@
+$citi-blue:#056dae;
+// .header {
+//     display: none;
+//     justify-content: space-between;
+//     align-items: center;
+//     background: $citi-blue;
+//     padding: 1rem 1.5rem;
+//     ion-icon {
+//       font-size: 24px;
+//       color: white;
+//     }
+//     box-shadow: 0px 2px 5px #999;
+//   }
+.overflow-scroll {
+    &.keyboard-up:not(.key-up-confirm){
+        overflow: hidden;
+    }
+}
+
+header-root {
+    display: none;
+}
+footer-root {
+    display: none;
+}
+.login-container {
+    height: 100%;
+    width: 100%;
+    background-image: url(/assets/BG_overlay@1x.jpg);
+    background-size: 100% 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    @media screen and (min-width:769px) {
+        height: calc(100% - 149px);
+    }
+    // @media (min-width:500px) and (max-width:768px)  {
+    //     height: calc(100% - 104px);
+    // }
+    .login-box {
+        margin: 0 auto;
+        height: 100%;
+        max-width: 880px;
+        text-align: center;
+        overflow: hidden;
+        // background-color: rgba(255, 255, 255, 0.3);
+        padding: 0 1.5rem;
+        @media (min-width:500px) and (max-width:768px)  {
+            max-width: 45rem;
+        }
+        .login-top-wrapper  {
+            margin: 0 auto;
+            margin-top: 5rem;
+            &.ios-margin {
+                margin-top: 8rem;
+            }
+            .logo {
+                width: 5.5rem;
+                margin: 0 auto; 
+            }
+            .welcome {
+                color: white;
+                margin-top: 2.5rem;
+                font-weight: 300;
+                ion-label {
+                    font-size: 2.2rem;
+                    margin-bottom: 2.5rem;
+                    display: block;
+                }
+                p {
+                    font-size: 1.7rem;
+                    line-height: 2.1rem;
+                }
+            }
+            .login-message {
+                display: none;
+            }
+            .large-screen {
+                display: none;
+            }
+            .input-wrapper {
+                .input-container {
+                    position: relative;
+                    margin-bottom: 1px;
+                    overflow: hidden;
+                    .test ::ng-deep input {
+                        height: 6.4rem;
+                        line-height: normal;
+                        font-size: 1.9rem;
+                        background: white;
+                        appearance: none;
+                        outline: none;
+                        width: 100%;
+                        border: none;
+                        padding: 0 1.5rem;
+                        font-weight: 300;
+                        border-radius: 0!important;
+                        text-align: left;
+                        font-family: Interstate;
+                    }
+                    input {
+                        height: 6.4rem;
+                        line-height: normal;
+                        font-size: 1.9rem;
+                        background: white;
+                        appearance: none;
+                        outline: none;
+                        width: 100%;
+                        border: none;
+                        padding: 0 1.5rem;
+                        font-weight: 300;
+                        border-radius: 0!important;
+                    }
+                    a {
+                        position: absolute;
+                        z-index: 10;
+                        right: 1.5rem;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        color: $citi-blue;
+                        text-decoration: none;
+                        font-size: 1.6rem;
+                    }
+                }
+                ion-button {
+                    display: none;
+                }
+                .large-screen {
+                    display: none;
+                }
+            }
+        }
+        .footer {
+            width: calc(100% - 4rem);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.2rem;
+            padding: 1.8rem 0;
+            border-top: 1px solid white;
+        }
+    }
+}
+ion-footer {
+    padding: 1rem;
+    background-color: #333;
+    ion-img {
+        width: 4rem;
+    }
+    display: none;
+}
+@media screen and (min-width:769px) {
+    header-root {
+        display: block;
+    }
+    footer-root {
+        display: block;
+    }
+    .login-container {
+        background-image: none;
+        background-color: #eee;
+        padding: 3rem 1.5rem;
+        .login-box {
+            position: relative;
+            background-image: url(/assets/BG_overlay@1x.jpg);
+            background-size: 50% 100%;
+            background-repeat: repeat-x;
+            padding: 0;
+            .white-mask {
+                height: 100%;
+                background-color: rgba(255,255,255,0.8)
+            }
+            .login-top-wrapper  {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                min-width: 300px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin-top: 0;
+                width: 100%;
+                text-align: center;
+                .logo {
+                    display: none;
+                }
+                .welcome {
+                    display: none;
+                }
+                .login-message {
+                    color: black;
+                    font-size: 36px;
+                    font-weight: 300;
+                    margin-bottom: 30px;
+                    display: block;
+                }
+                .input-wrapper {
+                    width: 300px;
+                    padding: 0 0;
+                    .input-container {
+                        input {
+                            height: 50px;
+                            line-height: 50px;
+                            font-size: 14px;
+                            border-radius: 6px;
+                            margin-bottom: 20px;
+                            background-color: #eee;
+                        }
+                        a {
+                            display: none;
+                        }
+                    }
+                    .large-screen {
+                        display: block;
+                    }
+                    ion-button {
+                        display: block;
+                        height: 50px;
+                        border: 6px;
+                        text-transform: none;
+                    }
+                }
+                .large-screen {
+                    display: block;
+                }
+                ion-item {
+                    --background: transparent;
+                    ion-label {
+                        color: black;
+                    }
+                }
+                .forget {
+                    color: black;
+                    font-size: 1.4rem;
+                    font-weight: 300;
+                }
+                .register {
+                    color: black;
+                    font-size: 1.4rem;
+                    font-weight: 300;
+                }
+            }
+            .footer {
+                display: none;
+            }
+        }
+    }
+}
+
+.link-text {
+    text-align: center;
+    color: $citi-blue;
+    cursor: pointer;
+}

@@ -1,0 +1,40 @@
+<div class="header">
+  <div class="black-header">
+    <div class="black-inner">
+      <ul class="left-items">
+        <li class="item">Citi Priority</li>
+        <li class="item">Citigold</li>
+        <li class="item">Citigold Private Client</li>
+        <li class="item">Business</li>
+      </ul>
+      <ul class="right-items">
+        <li class="item">Citi Specials</li>
+        <li class="item">Chinese</li>
+      </ul>
+    </div>
+  </div>
+  <div class="logo-line" [ngClass]="{'gold':type=='gold'}">
+    <div class="logo-line-inner">
+      <img src="/assets/logo.svg" alt="" class="logo" />
+      <div class="user-box">
+        <div>Welcome, {{username}}</div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="menu-line">
+    <div class="menu-line-inner">
+      <div class="menu">
+        <li class="item">Credit Cards</li>
+        <li class="item">Accounts</li>
+        <li class="item">Loans</li>
+        <li class="item">Wealth Management</li>
+        <li class="item">Insurance</li>
+      </div>
+      <div class="menu-box" (click)="openMobileHeader()"><ion-icon slot="start"  name="menu"></ion-icon></div>
+      <div class="search-box"><ion-icon slot="start"  name="search"></ion-icon></div>
+      
+    </div>
+  </div>
+</div>
+<mobile-header-root (close)="closeMobileHeader($event)" *ngIf="showMobileHeader"></mobile-header-root>

@@ -1,1 +1,19 @@
+@media screen and (min-width: 769px) {
+    ion-tab-bar {
+        display: none;
+    }
+}
+$citi-blue:#056dae;
+$citi-gold: #b5985c;
+ion-tab-button {
+    &.tab-selected.gold {
+        color: $citi-gold;
+    }
+    ion-icon {
+        // font-size: 2.6rem;
+    }
+    ion-label {
+        // font-size: 1rem;
+    }
+}
 

@@ -1,0 +1,71 @@
+.search-area {
+    background: black;
+    padding: 2rem 0; 
+    transition: all 0.3s;
+    &.focused {
+        padding: 0;
+        transition: all 0.3s;
+        ion-searchbar ::ng-deep {
+            .searchbar-input-container {
+                border-bottom: none;
+            }
+            .searchbar-cancel-button {
+                border-bottom: none;
+            }
+        }
+    }
+    ion-searchbar ::ng-deep {
+        .searchbar-input-container {
+            border-bottom: 1px solid;
+            border-bottom-color: var(--ion-color-white);
+            input {
+                color: white;
+                font-size: 17px;
+            }
+        }
+        ion-icon {
+            font-size: 24px;
+        }
+        .searchbar-cancel-button {
+            color: white;
+            border-bottom: 1px solid;
+            border-bottom-color: var(--ion-color-white);
+        }
+    }
+}
+.help {
+    position: relative;
+    .faq-list {
+        margin-bottom: 0;
+        ::ng-deep {
+            ion-item {
+                ion-label {
+                    span {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+        
+    }
+    ion-item-divider {
+        min-height: 1.2rem;
+    }
+    .action-list {
+        .locate {
+            p {
+                font-size: 17px;
+            }
+        }
+    }
+    
+}
+.bottom {
+    padding: 1.5rem;
+    background: #f7f7f7;
+    font-size: 1.1rem;
+    border-top: 1px solid #cccccc;
+    .link {
+        text-decoration: none;
+    }
+}

@@ -17,9 +17,69 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 </head>
+<style>
+@font-face {
+  font-family: 'Interstate';
+  font-weight: normal;
+	src: url('assets/fonts/interstate/Interstate-Regular.eot'); /* IE9 Compat Modes */
+	src: url('assets/fonts/interstate/Interstate-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+             url('assets/fonts/interstate/Interstate-Regular.woff') format('woff'), /* Modern Browsers */
+             url('assets/fonts/interstate/Interstate-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+             url('assets/fonts/interstate/Interstate-Regular.svg#Interstate-Regular') format('svg'); /* Legacy iOS */
+}
 
+@font-face {
+  font-display: fallback;
+  font-family: 'Interstate';
+  font-weight: 300;
+	src: url('assets/fonts/interstate/Interstate-Light.eot'); /* IE9 Compat Modes */
+	src: url('assets/fonts/interstate/Interstate-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+             url('assets/fonts/interstate/Interstate-Light.woff') format('woff'), /* Modern Browsers */
+             url('assets/fonts/interstate/Interstate-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+             url('assets/fonts/interstate/Interstate-Light.svg#Interstate-Light') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-display: fallback;
+  font-family: 'Interstate';
+  font-weight: 100;
+	src: url('assets/fonts/interstate/Interstate_exLight.eot'); /* IE9 Compat Modes */
+	src: url('assets/fonts/interstate/Interstate_exLight.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+             url('assets/fonts/interstate/Interstate_exLight.woff') format('woff'), /* Modern Browsers */
+             url('assets/fonts/interstate/Interstate_exLight.ttf')  format('truetype'), /* Safari, Android, iOS */
+             url('assets/fonts/interstate/Interstate_exLight.svg#Interstate_exLight') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Interstate';
+  font-weight: 700;
+  font-size: normal;
+	src: url('assets/fonts/interstate/Interstate-Bold.eot'); /* IE9 Compat Modes */
+	src: url('assets/fonts/interstate/Interstate-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+             url('assets/fonts/interstate/Interstate-Bold.woff') format('woff'), /* Modern Browsers */
+             url('assets/fonts/interstate/Interstate-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+             url('assets/fonts/interstate/Interstate-Bold.svg#Interstate-Bold') format('svg'); /* Legacy iOS */
+}
+
+   * {
+     font-family: Interstate;
+   }
+
+   ul {
+     margin: 0!important;
+     padding-inline-start: 0;
+   }
+</style>
 <body>
   <app-root></app-root>
 </body>
+<script>
+function setRem() {
+  var width = document.documentElement.clientWidth > 500 ? 500:document.documentElement.clientWidth;
+  document.documentElement.style.fontSize = width / 375*10 + 'px';
+}
 
+window.onload = setRem;
+window.onresize = setRem;
+</script>
 </html>

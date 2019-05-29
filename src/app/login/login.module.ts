@@ -2,15 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
-
 import { IonicModule } from '@ionic/angular';
 
-import { ContactusPage } from './contactus.page';
-
+import { LoginPage } from './login.page';
+import { ShareModule } from '../share/share.module';
+import {Keyboard} from '@ionic-native/keyboard/ngx';
+import {LoginService} from '../login.service';
 const routes: Routes = [
   {
     path: '',
-    component: ContactusPage
+    component: LoginPage
   }
 ];
 
@@ -19,8 +20,10 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    ShareModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [ContactusPage]
+  declarations: [LoginPage],
+  providers: [Keyboard]
 })
-export class ContactusPageModule {}
+export class LoginPageModule {}

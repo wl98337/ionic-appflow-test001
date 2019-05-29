@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
+import { of } from 'rxjs';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-tabs',
@@ -6,7 +10,13 @@ import { Component } from '@angular/core';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
-
-  constructor() {}
-
+  constructor(
+    private route: ActivatedRoute,
+    public service: LoginService
+  ) {}
+  type:string = "blue";
+  test:any;
+  ngOnInit() {
+    this.type = localStorage.getItem("type");
+  }
 }

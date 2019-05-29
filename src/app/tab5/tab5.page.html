@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">
+      Help
+    </ion-title>
+  </ion-toolbar>
+  <div class="search-area" [ngClass]="{'focused':searchFocused}" style="flex: 0 0 auto;">
+    <ion-searchbar #test (ionBlur)="onSearchBlur()" (ionCancel)="onSearchCancel($event)"
+      (ionChange)="search($event.target.value)" (ionFocus)="onSearchFocus()" color="dark"
+      placeholder="Hi! How can we help you?" showCancelButton cancelButtonText="Cancel"></ion-searchbar>
+  </div>
+</ion-header>
+
+<ion-content class="help">
+  <ion-list class="faq-list" *ngIf="searchFocused">
+    <ion-item *ngFor="let package of packages$ | async" (click)="goFaqDetails(package.id)">
+      <ion-label class="ion-margin-vertical ion-text-wrap" color="primary" [innerHtml]="package.question">
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list class="faq-list" *ngIf="!searchFocused">
+    <ion-item lines="none">
+      <ion-label class="ion-margin-vertical" color="medium">What's new on Citi Mobile</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="ion-margin-vertical" color="primary">New Citi Mobile® interface</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="ion-margin-vertical" color="primary">Top 5 features</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="ion-margin-vertical" color="primary">The simple way to send and receive money</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="ion-margin-vertical" color="primary">Your security is our priority</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="ion-margin-vertical" color="primary">Pay your credit card transactions with Points
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-item-divider *ngIf="!searchFocused" color="light"></ion-item-divider>
+  <ion-list class="action-list" *ngIf="!searchFocused">
+    <ion-item detail>
+      <ion-label class="ion-margin-vertical locate" text-wrap>
+        <ion-text color="black">
+          <p>Locate ATMs</p>
+        </ion-text>
+        <ion-text color="black">
+          <p>& Branches</p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none" detail>
+      <!-- <ion-label class="ion-margin-vertical">
+        Get in touch
+      </ion-label> -->
+      <ion-label class="ion-margin-vertical locate" text-wrap>
+        <ion-text color="black">
+          <p>Get in touch</p>
+        </ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+<ion-footer *ngIf="!searchFocused">
+  <ion-grid class="bottom">
+    <ion-row>
+      <ion-col class="ion-float-left">
+        <a class="link" href="">Privacy Policy</a>
+      </ion-col>
+      <ion-col class="ion-text-right">
+        <a class="link" href="">Online User Agreement</a>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-label color="medium">
+          Citibank Singapore Ltd. Co. Reg. No. 200309485k
+        </ion-label>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

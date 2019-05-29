@@ -1,0 +1,32 @@
+<div class="mobile-header">
+    <div class="blue-header">
+        <div class="home">Home</div>
+        <div class="close-box" (click)="closeHeader()"><ion-icon slot="start"  name="close"></ion-icon></div>
+    </div>
+    <ul class="white-list">
+        <li class="item" *ngFor="let item of whiteList">
+            <span class="text">{{item.title}}</span>
+            <ion-icon slot="start"  name="add"></ion-icon>
+        </li>
+    </ul>
+    <ul class="black-list">
+        <li class="item" *ngFor="let item of blackList">
+            <span class="text">{{item}}</span>
+        </li>
+    </ul>
+    <ul class="contact-bar">
+        <li class="item">
+                <ion-icon slot="start" name="call"></ion-icon>
+            <span class="text">Contact us</span>
+        </li>
+        <li class="item">
+                <ion-icon slot="start" name="pin"></ion-icon>
+            <span class="text">ATM/Branch Locator</span>
+        </li>
+    </ul>
+    <div class="language">
+        <div class="language-button">
+            Chinese<ion-icon slot="start" name="expand"></ion-icon>
+        </div>
+    </div>
+</div>
